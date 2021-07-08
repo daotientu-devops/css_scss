@@ -1,0 +1,310 @@
+@charset "UTF-8";
+section {
+  background-color: #f1f1f1; }
+  section h2 {
+    color: red; }
+
+/**
+ * SCSS nesting: phân cấp css cha-con
+ */
+section {
+  width: 300px; }
+  section h2 {
+    font-size: 12px; }
+  section div {
+    padding: 20px; }
+
+#main {
+  width: 300px; }
+  #main h2 {
+    font-size: 12px; }
+  #main .list {
+    padding: 20px; }
+    #main .list li {
+      background-color: #f1f1f1; }
+
+.btn-submit {
+  width: 100px;
+  background-color: red; }
+  .btn-submit:hover {
+    background-color: blue; }
+
+.list {
+  margin-bottom: 20px; }
+  .list.list-last {
+    margin-bottom: 0; }
+
+.list li {
+  float: left;
+  margin-right: 10px; }
+  .list li:last-child {
+    margin-right: 0; }
+
+/**
+  * SCSS nesting thuộc tính
+  * Các thuộc tính có tiền tố giống nhau có thể được gom chung với nhau
+  * Một số thuộc tính có tiền tố giống nhau hay dùng: font-, margin-, padding-, text-, background-, border-
+ */
+section {
+  width: 300px;
+  font-family: Arial, sans-serif;
+  font-size: 16px; }
+  section h2 {
+    font-size: 20px; }
+  section div {
+    padding: 20px; }
+
+/**
+  * SCSS nesting @media
+  * @media được sử dụng bên trong thành phần nào thì sẽ sử dụng cho thành phần đó
+ */
+#main {
+  width: 300px; }
+  @media only screen and (min-width: 641px) {
+    #main {
+      width: 200px; } }
+
+/**
+  * SCSS @extend: kế thừa những thuộc tính của thành phần khác đã được khai báo trước đó, giúp giảm thời gian và trùng lặp code
+ */
+.box, .section {
+  background-color: #f1f1f1;
+  border: 1px solid #CCC; }
+
+.section {
+  padding: 20px; }
+
+/**
+  * SCSS @mixin & @include
+  * Khác với @exclude là kế thừa thuộc tính của thành phần có sẵn, tuy nhiên @mixin & @include cung cấp 1 giải pháp tốt hơn nhiều, đo là tạo một bộ các thuộc tính
+  * và chèn nó vào bên trong các thành phần muốn sử dụng, quan trọng là @mixin & @include cung cấp đối số có thể tùy chỉnh trong từng thành phần được sử dụng
+ */
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: #f1f1f1; }
+  ul li {
+    padding: 10px;
+    border: 1px solid #CCC; }
+
+.main {
+  margin: 0 auto;
+  width: 300px;
+  padding: 20px; }
+
+.box, .section {
+  margin: 0 auto;
+  width: 100px;
+  background-color: #f1f1f1; }
+
+.main {
+  margin: 0 auto;
+  width: 300px;
+  color: red;
+  padding: 20px; }
+
+.box, .section {
+  margin: 0 auto;
+  width: 300px;
+  font-size: 24px;
+  background-color: #f1f1f1; }
+
+.main {
+  -webkit-box-shadow: 3px 3px 2px blue;
+  -moz-box-shadow: 3px 3px 2px blue;
+  -ms-box-shadow: 3px 3px 2px blue;
+  box-shadow: 3px 3px 2px blue;
+  padding: 20px; }
+
+.box, .section {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  background-color: #f1f1f1; }
+
+/**
+  * SCSS placeholder
+  * Cách sử dụng SCSS placeholder khá giống với @mixin, tuy nhiên các thành phần sử dụng placeholders sẽ được gom chung vào cùng 1 bộ các thuộc tính
+ */
+ul, div {
+  margin: 0;
+  padding: 0;
+  background: none; }
+
+ul {
+  background-color: #f1f1f1; }
+  ul li {
+    padding: 10px;
+    border: 1px solid #CCC; }
+
+/**
+  * SCSS @function
+  * khá giống với @mixin, tuy nhiên thay vì biên dịch CSS như @mixin thì @function sẽ trả về giá trị, thuộc tính hoặc function thậm chí là 1 @mixin
+ */
+.list {
+  width: 600px; }
+  .list li {
+    float: left;
+    width: 150px; }
+
+.two-cols {
+  width: 50%; }
+
+.three-cols {
+  width: 33.33333%; }
+
+.four-cols {
+  width: 25%; }
+
+.five-cols {
+  width: 20%; }
+
+/**
+  * SCSS @if @else: thiết lập bộ template dùng chung cho nhiều vị trí
+ */
+#main {
+  position: relative; }
+  #main .box01 {
+    position: absolute;
+    left: 40px;
+    top: 20px; }
+  #main .box02 {
+    position: absolute;
+    left: 30px;
+    bottom: 50px; }
+
+#main {
+  border-radius: 0;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px; }
+
+/**
+  * SCSS @for thường được dùng để tác động tới danh sách, với tính chất tăng dần
+ */
+.item-1 {
+  opacity: 1; }
+
+.item-2 {
+  opacity: 0.5; }
+
+.item-3 {
+  opacity: 0.33333; }
+
+.item-4 {
+  opacity: 0.25; }
+
+.item-5 {
+  opacity: 0.2; }
+
+.col-1 {
+  width: 12.5%; }
+
+.col-2 {
+  width: 25%; }
+
+.col-3 {
+  width: 37.5%; }
+
+.col-4 {
+  width: 50%; }
+
+.col-5 {
+  width: 62.5%; }
+
+.col-6 {
+  width: 75%; }
+
+.col-7 {
+  width: 87.5%; }
+
+.col-8 {
+  width: 100%; }
+
+ul:nth-child(3n+1) {
+  background-color: #004080; }
+
+ul:nth-child(3n+2) {
+  background-color: #004d99; }
+
+ul:nth-child(3n+3) {
+  background-color: #0059b3; }
+
+/**
+ * SCSS @while: sẽ lặp nội dung bên trong while trong khi vẫn còn thỏa mãn điều kiện ban đầu
+ */
+.item-4 {
+  width: 200px; }
+
+.item-3 {
+  width: 266.66667px; }
+
+.item-2 {
+  width: 400px; }
+
+.item-1 {
+  width: 800px; }
+
+.item-3 {
+  color: red; }
+
+.item-4 {
+  color: red; }
+
+/**
+ * SCSS @each: thiết lập một loạt các giá trị có cùng tính chất, đặc biệt là trong danh sách với các thuộc tính gần như là như nhau
+ * Cách sử dụng gần giống với cấu trúc for each của PHP
+ */
+.icon-40px {
+  font-size: 40px;
+  height: 40px;
+  width: 40px; }
+
+.icon-50px {
+  font-size: 50px;
+  height: 50px;
+  width: 50px; }
+
+.icon-80px {
+  font-size: 80px;
+  height: 80px;
+  width: 80px; }
+
+.normal {
+  font-weight: bold;
+  font-size: 10px; }
+
+.emphasis {
+  font-weight: bold;
+  font-size: 15px; }
+
+.default {
+  font-weight: normal; }
+
+.emphasis {
+  font-weight: bold; }
+
+/**
+ * SCSS @import: cung cấp 1 quy tắc @import thông qua quá trình biên dịch, không như @import của CSS yêu cầu request HTTP từ trình duyệt
+ * Việc import SCSS sẽ đồng thời kết hợp các công thức nhận được để biên dịch thành file CSS
+ * Việc import SCSS tuân thủ một số quy tắc:
+ * - File import sẽ có dạng dấu gạch dưới ở trước tên file: _name.scss
+ * - Nội dung import chỉ chứa name mà không có dấu gạch _ và định dạng file .scss
+ */
+p, div {
+  padding: 0;
+  margin: 0; }
+
+.box, .section {
+  padding: 20px;
+  line-height: 0; }
+
+.list {
+  color: red; }
+  .list li {
+    font-size: 14px; }
+
+/**
+ * SCSS @import nhiều file
+ */

@@ -1,0 +1,8 @@
+$a: 20px;
+$b: $a + 30px;
+#main {
+  margin-bottom: $a;
+}
+#footer {
+  padding: $b;
+}
